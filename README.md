@@ -4,8 +4,8 @@
 </p>
 
 <p align="center">
- <a href="https://opensource.org/licenses/MIT"><img width="80" src="https://img.shields.io/badge/License-MIT-red.svg"></a>
- <a href="https://discord.gg/CPQHAZrg8b0"><img width="80" src="https://img.shields.io/badge/Discord-%237289DA.svg?style=for-the-badge&logo=discord&logoColor=white"></a>
+ <a href="https://opensource.org/licenses/MIT" target="_blank"><img width="80" src="https://img.shields.io/badge/License-MIT-red.svg"></a>
+ <a href="https://discord.gg/CPQHAZrg8b0" target="_blank"><img width="80" src="https://img.shields.io/badge/Discord-%237289DA.svg?style=for-the-badge&logo=discord&logoColor=white"></a>
 </p>
 
 <h2>:memo: Table Of Contents</h2>
@@ -34,8 +34,8 @@ CodersHQ Bounties is a UI thats sits on top of the CodersHQ Backend that allows 
 <h3>:link: API Gateway</h3>
 <p>The API Gateway is what joins everything together. It is the centerpoint for all communication between CodersHQ Backend, CodersHQ Interface and CodersHQ Bounties.
 
-For those who may not be familiar with the concept of an API, it stands for "Application Programming Interface". It's an intermediary that allows different pieces of software to be able to talk to each other easily and efficiently. Think of it as a translator between two people - one speaks English and the other speaks Arabic. The translator or API's job is to translate between the two languages so that both people can understand what the other person is saying. Read more about it here: https://apimetrics.io/api-knowledge-base/apis-for-dummies/
-
+For those who may not be familiar with the concept of an API, it stands for "Application Programming Interface". It's an intermediary that allows different pieces of software to be able to talk to each other easily and efficiently. Think of it as a translator between two people - one speaks English and the other speaks Arabic. The translator or API's job is to translate between the two languages so that both people can understand what the other person is saying. Read more about it <a href="https://apimetrics.io/api-knowledge-base/apis-for-dummies/" target="_blank">here</a>.
+ 
 As a member of the CodersHQ Bounties team, you are NOT responsible for developing the API in any way. We're just <i>using</i> it to be able to communicate with the other projects.</p>
 
 <h3>:technologist: Frontend Interface</h3>
@@ -49,7 +49,7 @@ As a member of the CodersHQ Bounties team, THIS is what we're going to be workin
 </ol>
 
 Here's a flowchart to visualize it better:
-![image](https://user-images.githubusercontent.com/92259277/190863663-111c8895-cbf1-451c-9601-3a171b98490b.png)
+<img src="https://user-images.githubusercontent.com/92259277/190863663-111c8895-cbf1-451c-9601-3a171b98490b.png"/>
 
 NOTE: Keep in mind that none of this is set in stone. We're all ears for any suggestions you may have :ear:
 
