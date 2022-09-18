@@ -1,6 +1,12 @@
 <p align="center">
  <img width="500" src="https://user-images.githubusercontent.com/92259277/190894050-ba6b293d-c3b0-4679-86aa-61622a4dafde.png">
-<h1 align="center">CodersHQ Bounties</h1>
+ <h1 align="center">CodersHQ Bounties</h1>
+</p>
+
+<p align="center">
+ <a href="https://opensource.org/licenses/MIT"><img width="80" src="https://img.shields.io/badge/License-MIT-red.svg"></a>
+ <a href="https://discord.gg/CPQHAZrg8b0"><img width="80" src="https://img.shields.io/badge/Discord-%237289DA.svg?style=for-the-badge&logo=discord&logoColor=white"></a>
+</p>
 
 <h2>:memo: Table Of Contents</h2>
 <ol>
