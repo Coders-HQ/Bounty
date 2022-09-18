@@ -1,7 +1,6 @@
 <p align="center">
- <img width="500" src="https://cdn-az.allevents.in/events5/banners/2ef3aa159dfbd7f5fe3707f4d7ef64ae30b70e298136f8ce3123990f0bd18720-rimg-w1000-h349-gmir.png?v=1644048442">
+ <img width="500" src="https://user-images.githubusercontent.com/92259277/190894050-ba6b293d-c3b0-4679-86aa-61622a4dafde.png">
 <h1 align="center">CodersHQ Bounties</h1>
-</p>
 
 <h2>:memo: Table Of Contents</h2>
 <ol>
