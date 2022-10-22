@@ -38,7 +38,7 @@ The API Gateway is what joins everything together. It is the centerpoint for all
 
 For those who may not be familiar with the concept of an API, it stands for "Application Programming Interface". It's an intermediary that allows different pieces of software to be able to talk to each other easily and efficiently. Think of it as a translator between two people - one speaks English and the other speaks Arabic. The translator or API's job is to translate between the two languages so that both people can understand what the other person is saying. Read more about it [here](https://apimetrics.io/api-knowledge-base/apis-for-dummies/).
 
-As a member of the CodersHQ Bounties team, you are NOT responsible for developing the API in any way. We're just *using* it to be able to communicate with the other projects.
+As a member of the CodersHQ Bounties team, you are NOT responsible for developing the API in any way. We're just _using_ it to be able to communicate with the other projects.
 
 ## 👨🏻‍💻 Frontend Interface
 
@@ -52,8 +52,7 @@ As a member of the CodersHQ Bounties team, THIS is what we're going to be workin
 
 Here's a flowchart to visualize it better:
 
-![Flow Chart](https://user-images.githubusercontent.com/92259277/190863663-111c8895-cbf1-451c-9601-3a171b98490b.png "Flow Chart")
-
+![Flow Chart](https://user-images.githubusercontent.com/92259277/190863663-111c8895-cbf1-451c-9601-3a171b98490b.png 'Flow Chart')
 
 NOTE: Keep in mind that none of this is set in stone. We're all ears for any suggestions you may have 👂🏻
 
@@ -64,7 +63,8 @@ This section will be updated continuously based on your feedback and suggestions
 - Will the payments be given and received through the website directly using an integrated wallet (blockchain 👀) or sent and received privately by both parties?
 - A small fee should be charged for each challenge posting, just so that companies don't stop caring about their challenges and waste the efforts of all of the participants (this is a common issue on Freelancer)
 - All celebratory effects must include bounty bars 🍫
-## 📃  Developer Guide
+
+## 📃 Developer Guide
 
 This project is built with react ecosystem.
 
@@ -73,11 +73,19 @@ This project is built with react ecosystem.
 Install the following tools on your system.
 
 - [NodeJS](https://nodejs.org/en/download/)
-- [VSCode](https://code.visualstudio.com/download) or any other code editor 
+- [VSCode](https://code.visualstudio.com/download) or any other code editor
 - [Git](https://git-scm.com/downloads)
 
-### How to Run Project 
+### How to Run Project
 
-- Clone project and get into the root folder of the project (`cd Bounty`)
-- Run `npm i` on your terminal
-- Run `npm start` on your terminal
+- `git@github.com:Coders-HQ/Bounty.git`
+- `cd Bounty`
+- `npm i`
+- `npm start`
+
+### Hosting
+
+The app is hosted on GitHub pages.
+
+- `npm run deploy`
+- Access the app at https://coders-hq.github.io/Bounty/
