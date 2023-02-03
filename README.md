@@ -90,3 +90,4 @@ The app is hosted on GitHub pages.
 - `npm run deploy`
 - Access the app at https://coders-hq.github.io/Bounty/
 - Updates
+- auth
