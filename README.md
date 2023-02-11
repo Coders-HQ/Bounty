@@ -78,7 +78,7 @@ Install the following tools on your system.
 
 ### How to Run Project
 
-- `git@github.com:Coders-HQ/Bounty.git`
+- `git clone git@github.com:Coders-HQ/Bounty.git`
 - `cd Bounty`
 - `npm i`
 - `npm start`
