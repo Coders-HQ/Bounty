@@ -10,10 +10,18 @@ export const REQUEST_PASSWORD_URL = `${API_URL}/forgot_password`
 
 // Server should return AuthModel
 export function login(email: string, password: string) {
-  return axios.post<AuthModel>(LOGIN_URL, {
-    email,
-    password,
-  })
+  return {
+    data: {
+      id: 2,
+      first_name: 'Amani',
+      last_name: 'Jakubowski',
+      email: 'admin@demo.com',
+      email_verified_at: '2023-01-25T12:13:02.000000Z',
+      created_at: '2023-01-25T12:13:02.000000Z',
+      updated_at: '2023-01-25T12:13:02.000000Z',
+      api_token: '$2y$10$dtYPv.E0zua15DAvvvUQve0XdB77yo.4r.vMaiDOezKZrG7TugG9G',
+    },
+  };
 }
 
 // Server should return AuthModel
@@ -41,7 +49,18 @@ export function requestPassword(email: string) {
 }
 
 export function getUserByToken(token: string) {
-  return axios.post<UserModel>(GET_USER_BY_ACCESSTOKEN_URL, {
-    api_token: token,
-  })
+  return {
+    data: {
+      id: 2,
+      first_name: 'Amani',
+      last_name: 'Jakubowski',
+      email: 'admin@demo.com',
+      username: 'admin@demo.com',
+      password: '$2y$10$dtYPv.E0zua15DAvvvUQve0XdB77yo.4r.vMaiDOezKZrG7TugG9G',
+      email_verified_at: '2023-01-25T12:13:02.000000Z',
+      created_at: '2023-01-25T12:13:02.000000Z',
+      updated_at: '2023-01-25T12:13:02.000000Z',
+      api_token: '$2y$10$dtYPv.E0zua15DAvvvUQve0XdB77yo.4r.vMaiDOezKZrG7TugG9G',
+    },
+  };
 }
