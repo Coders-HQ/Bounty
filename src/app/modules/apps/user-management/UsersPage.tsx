@@ -10,7 +10,7 @@ const usersBreadcrumbs: Array<PageLink> = [
     isActive: false,
   },
   {
-    title: 'Users',
+    title: 'Bounty',
     path: '',
     isSeparator: true,
     isActive: false,
@@ -25,13 +25,12 @@ const UsersPage = () => {
           path='users'
           element={
             <>
-              <PageTitle breadcrumbs={usersBreadcrumbs}>Users list</PageTitle>
-              <UsersListWrapper />
+              <PageTitle >Learn</PageTitle>
+       
             </>
           }
         />
       </Route>
-      <Route index element={<Navigate to='/apps/user-management/users' />} />
     </Routes>
   )
 }

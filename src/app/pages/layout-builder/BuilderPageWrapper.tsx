@@ -5,7 +5,7 @@ import {BuilderPage} from './BuilderPage'
 const BuilderPageWrapper: FC = () => {
   return (
     <>
-      <PageTitle breadcrumbs={[]}>Layout Builder</PageTitle>
+      <PageTitle breadcrumbs={[]}>Dashboard</PageTitle>
       <BuilderPage />
     </>
   )

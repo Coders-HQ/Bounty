@@ -7,8 +7,8 @@ import {AccountHeader} from './AccountHeader'
 
 const accountBreadCrumbs: Array<PageLink> = [
   {
-    title: 'Account',
-    path: '/crafted/account/overview',
+    title: '',
+    path: '',
     isSeparator: false,
     isActive: false,
   },
@@ -35,7 +35,7 @@ const AccountPage: React.FC = () => {
           path='overview'
           element={
             <>
-              <PageTitle breadcrumbs={accountBreadCrumbs}>Overview</PageTitle>
+              <PageTitle >My Profile</PageTitle>
               <Overview />
             </>
           }
@@ -44,7 +44,7 @@ const AccountPage: React.FC = () => {
           path='settings'
           element={
             <>
-              <PageTitle breadcrumbs={accountBreadCrumbs}>Settings</PageTitle>
+              <PageTitle >Settings</PageTitle>
               <Settings />
             </>
           }

@@ -11,10 +11,10 @@ const SidebarMenuMain = () => {
   return (
     <>
       <SidebarMenuItem
-        to='/dashboard'
+        to='/builder'
         icon='/media/icons/duotune/general/dashboard.svg'
         title={intl.formatMessage({id: 'MENU.DASHBOARD'})}
-        fontIcon='bi-app-indicator'
+        fontIcon='bi-archive'
       />
 
 
@@ -26,10 +26,10 @@ const SidebarMenuMain = () => {
       />
 
       <SidebarMenuItem
-        to='/builder'
+        to='/dashboard'
         icon='/media/icons/duotune/general/myteam.svg'
         title='My Team'
-        fontIcon='bi-layers'
+        fontIcon='bi-app-indicator'
       />
 
 
@@ -41,7 +41,7 @@ const SidebarMenuMain = () => {
 
 
       <SidebarMenuItem
-        to='/builder'
+        to='/apps/user-management/users'
         icon='/media/icons/duotune/general/learn.svg'
         title='Learn'
         fontIcon='bi-layers'

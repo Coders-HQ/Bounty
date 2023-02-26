@@ -5,7 +5,6 @@ import {KTSVG} from '../../../../_metronic/helpers'
 import {
   ChartsWidget1,
   TablesWidget1,
-  ListsWidget5,
   TablesWidget5,
 } from '../../../../_metronic/partials/widgets'
 

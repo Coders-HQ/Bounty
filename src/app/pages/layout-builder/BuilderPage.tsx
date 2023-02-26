@@ -5,7 +5,7 @@ import {KTSVG, toAbsoluteUrl} from '../../../_metronic/helpers'
 import {getLayoutFromLocalStorage, ILayout, LayoutSetup} from '../../../_metronic/layout/core'
 
 const BuilderPage: React.FC = () => {
-  const [tab, setTab] = useState('Sidebar')
+  const [tab, setTab] = useState('Recent Activity')
   const [config, setConfig] = useState<ILayout>(getLayoutFromLocalStorage())
   const [configLoading, setConfigLoading] = useState<boolean>(false)
   const [resetLoading, setResetLoading] = useState<boolean>(false)
@@ -32,31 +32,29 @@ const BuilderPage: React.FC = () => {
   return (
     <>
       <div className='card mb-10'>
-        <div className='card-body d-flex align-items-center py-8'>
+        <div className='card-body d-flex align-items-left py-8'>
           <div className='d-flex h-80px w-80px flex-shrink-0 flex-center position-relative'>
-            <KTSVG
-              path='/media/icons/duotune/abstract/abs051.svg'
-              className='svg-icon-primary position-absolute opacity-15'
-              svgClassName='h-80px w-80px'
+            <img
+            alt='Logo'
+            src={toAbsoluteUrl('/media/logos/arabcoders')}
+            style={{ width: 150, height: 60}}
             />
-            <KTSVG
-              path='/media/icons/duotune/coding/cod009.svg'
-              className='svg-icon-3x svg-icon-primary position-absolute'
-            />
-          </div>
 
+          </div>
+      
           <div className='ms-6'>
             <p className='list-unstyled text-gray-600 fw-bold fs-6 p-0 m-0'>
-              The layout builder is to assist your set and configure your preferred project layout
-              specifications and preview it in real-time.
+              
             </p>
+
             <p className='list-unstyled text-gray-600 fw-bold fs-6 p-0 m-0'>
-              Also, you can configurate the Layout in the code (
-              <code>src/_metronic/layout/core/_LayoutConfig.ts</code> file). Don't forget clear your
-              local storage when you are changing _LayoutConfig.
+        
             </p>
+
           </div>
+
         </div>
+
       </div>
 
       <div className='card card-custom'>
@@ -71,29 +69,39 @@ const BuilderPage: React.FC = () => {
           >
             <li className='nav-item'>
               <a
-                className={clsx(`nav-link cursor-pointer`, {active: tab === 'Sidebar'})}
-                onClick={() => setTab('Sidebar')}
+                className={clsx(`nav-link cursor-pointer`, {active: tab === 'Recent Activity'})}
+                onClick={() => setTab('Recent Activity')}
                 role='tab'
               >
-                Sidebar
+                Recent Activity
               </a>
             </li>
             <li className='nav-item'>
               <a
-                className={clsx(`nav-link cursor-pointer`, {active: tab === 'Header'})}
-                onClick={() => setTab('Header')}
+                className={clsx(`nav-link cursor-pointer`, {active: tab === 'Recommended'})}
+                onClick={() => setTab('Recommended')}
                 role='tab'
               >
-                Header
+                Recommended
               </a>
             </li>
             <li className='nav-item'>
               <a
-                className={clsx(`nav-link cursor-pointer`, {active: tab === 'Toolbar'})}
-                onClick={() => setTab('Toolbar')}
+                className={clsx(`nav-link cursor-pointer`, {active: tab === 'In Progress'})}
+                onClick={() => setTab('In Progress')}
                 role='tab'
               >
-                Toolbar
+                In Progress
+              </a>
+            </li>
+
+            <li className='nav-item'>
+              <a
+                className={clsx(`nav-link cursor-pointer`, {active: tab === 'To Do'})}
+                onClick={() => setTab('RTo Do')}
+                role='tab'
+              >
+                To Do
               </a>
             </li>
           </ul>
@@ -105,7 +113,7 @@ const BuilderPage: React.FC = () => {
               <div className={clsx('tab-pane', {active: tab === 'Sidebar'})}>
                 <div className='form-group d-flex flex-stack'>
                   <div className='d-flex flex-column'>
-                    <h4 className='fw-bold text-dark'>Fixed</h4>
+                    <h4 className='fw-bold text-dark'>Recent Activity</h4>
                     <div className='fs-7 fw-semibold text-muted'>Fixed sidebar mode</div>
                   </div>
                   <div className='d-flex justify-content-end'>
