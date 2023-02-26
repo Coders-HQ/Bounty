@@ -1,0 +1,10 @@
+.dashboard-main-cards {
+    background-size: cover;
+    height: 330px;
+    &--left {
+        background-image: url('../../../../public/media/logos/microsoft.png');
+    }
+    &--right {
+        background-image: url('../../../../public/media/logos/arabcoders.png');
+    }
+}

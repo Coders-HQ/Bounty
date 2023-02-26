@@ -31,30 +31,37 @@ const BuilderPage: React.FC = () => {
 
   return (
     <>
-      <div className='card mb-10'>
-        <div className='card-body d-flex align-items-left py-8'>
-          <div className='d-flex h-80px w-80px flex-shrink-0 flex-center position-relative'>
-            <img
-            alt='Logo'
-            src={toAbsoluteUrl('/media/logos/arabcoders')}
-            style={{ width: 150, height: 60}}
-            />
-
-          </div>
-      
-          <div className='ms-6'>
-            <p className='list-unstyled text-gray-600 fw-bold fs-6 p-0 m-0'>
+      <div className="d-flex justify-content-between">
+        <div className='card mb-10 col-6 me-4 dashboard-main-cards dashboard-main-cards--left'>
+          <div className='card-body d-flex align-items-left py-8'>
+            <div className='d-flex h-80px w-80px flex-shrink-0 flex-center position-relative'>
               
-            </p>
 
-            <p className='list-unstyled text-gray-600 fw-bold fs-6 p-0 m-0'>
-        
-            </p>
+            </div>
 
           </div>
 
         </div>
+        <div className='card mb-10 col-6 dashboard-main-cards dashboard-main-cards--right'>
+          <div className='card-body d-flex align-items-left py-8'>
+            <div className='d-flex h-80px w-80px flex-shrink-0 flex-center position-relative'>
 
+            </div>
+        
+            <div className='ms-6'>
+              <p className='list-unstyled text-gray-600 fw-bold fs-6 p-0 m-0'>
+                
+              </p>
+
+              <p className='list-unstyled text-gray-600 fw-bold fs-6 p-0 m-0'>
+          
+              </p>
+
+            </div>
+
+          </div>
+
+        </div>
       </div>
 
       <div className='card card-custom'>
