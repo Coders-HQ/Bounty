@@ -1,33 +1,186 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import clsx from 'clsx'
-import React, {useState} from 'react'
-import {KTSVG, toAbsoluteUrl} from '../../../_metronic/helpers'
-import {getLayoutFromLocalStorage, ILayout, LayoutSetup} from '../../../_metronic/layout/core'
+import React, { useState } from 'react'
+import { KTSVG, toAbsoluteUrl } from '../../../_metronic/helpers'
+import { getLayoutFromLocalStorage, ILayout, LayoutSetup } from '../../../_metronic/layout/core'
 
+const recentActivityApiDataWillBe = [
+  {
+    title: 'TensorFlow - Help Protect the Great Barrier Reef',
+    description: 'Detect crown-of-thorns starfish in underwater image data the famous MNIST data Prediction',
+    amount: '$150,000',
+    logo: '/media/dummyDataForDashboardCar/logo1.svg',
+    banner: '/media/dummyDataForDashboardCar/bannerimage1.svg',
+    tag: 'Research',
+  },
+  {
+    title: 'TensorFlow - Help Protect the Great Barrier Reef',
+    description: 'Detect crown-of-thorns starfish in underwater image data the famous MNIST data Prediction',
+    amount: '$150,000',
+    logo: '/media/dummyDataForDashboardCar/logo1.svg',
+    banner: '/media/dummyDataForDashboardCar/bannerimage1.svg',
+    tag: 'Code Competition',
+  },
+  {
+    title: 'TensorFlow - Help Protect the Great Barrier Reef',
+    description: 'Detect crown-of-thorns starfish in underwater image data the famous MNIST data Prediction',
+    amount: '$150,000',
+    logo: '/media/dummyDataForDashboardCar/logo1.svg',
+    banner: '/media/dummyDataForDashboardCar/bannerimage1.svg',
+    tag: 'Prediction',
+  }
+  ,
+  {
+    title: 'TensorFlow - Help Protect the Great Barrier Reef',
+    description: 'Detect crown-of-thorns starfish in underwater image data the famous MNIST data Prediction',
+    amount: '$150,000',
+    logo: '/media/dummyDataForDashboardCar/logo1.svg',
+    banner: '/media/dummyDataForDashboardCar/bannerimage1.svg',
+    tag: 'Code Competition',
+  }
+]
+const recommendedActivityApiDataWillBe = [
+  {
+    title: 'G-Research Crypto Forecasting',
+    description: 'Use your ML expertise to predict real crypto market data the famous MNIST data Prediction',
+    amount: '$150,000',
+    logo: '/media/dummyDataForDashboardCar/logo2.svg',
+    banner: '/media/dummyDataForDashboardCar/bannerimage2.svg',
+    tag: 'Prediction',
+  },
+  {
+    title: 'G-Research Crypto Forecasting',
+    description: 'Use your ML expertise to predict real crypto market data the famous MNIST data Prediction',
+    amount: '$150,000',
+    logo: '/media/dummyDataForDashboardCar/logo2.svg',
+    banner: '/media/dummyDataForDashboardCar/bannerimage2.svg',
+    tag: 'Prediction',
+  },
+  {
+    title: 'G-Research Crypto Forecasting',
+    description: 'Use your ML expertise to predict real crypto market data the famous MNIST data Prediction',
+    amount: '$150,000',
+    logo: '/media/dummyDataForDashboardCar/logo2.svg',
+    banner: '/media/dummyDataForDashboardCar/bannerimage2.svg',
+    tag: 'Prediction',
+  }
+  ,
+  {
+    title: 'G-Research Crypto Forecasting',
+    description: 'Use your ML expertise to predict real crypto market data the famous MNIST data Prediction',
+    amount: '$150,000',
+    logo: '/media/dummyDataForDashboardCar/logo2.svg',
+    banner: '/media/dummyDataForDashboardCar/bannerimage2.svg',
+    tag: 'Prediction',
+  }
+]
+const inProgressApiDataWillBe = [
+  {
+    title: 'Jigsaw Rate Severity of Toxic Comments',
+    description: 'Rank relative ratings of toxicity between comments the famous MNIST data Prediction',
+    amount: '$150,000',
+    logo: '/media/dummyDataForDashboardCar/logo3.svg',
+    banner: '/media/dummyDataForDashboardCar/bannerimage3.svg',
+    tag: 'Prediction',
+  },
+  {
+    title: 'Jigsaw Rate Severity of Toxic Comments',
+    description: 'Rank relative ratings of toxicity between comments the famous MNIST data Prediction',
+    amount: '$150,000',
+    logo: '/media/dummyDataForDashboardCar/logo3.svg',
+    banner: '/media/dummyDataForDashboardCar/bannerimage3.svg',
+    tag: 'Prediction',
+  },
+  {
+    title: 'Jigsaw Rate Severity of Toxic Comments',
+    description: 'Rank relative ratings of toxicity between comments the famous MNIST data Prediction',
+    amount: '$150,000',
+    logo: '/media/dummyDataForDashboardCar/logo3.svg',
+    banner: '/media/dummyDataForDashboardCar/bannerimage3.svg',
+    tag: 'Prediction',
+  }
+  ,
+  {
+    title: 'Jigsaw Rate Severity of Toxic Comments',
+    description: 'Rank relative ratings of toxicity between comments the famous MNIST data Prediction',
+    amount: '$150,000',
+    logo: '/media/dummyDataForDashboardCar/logo3.svg',
+    banner: '/media/dummyDataForDashboardCar/bannerimage3.svg',
+    tag: 'Prediction',
+  }
+]
+const toDoApiDataWillBe = [
+  {
+    title: 'Digit Recognizer',
+    description: 'Learn computer vision fundamentals with the famous MNIST data the famous MNIST data Prediction',
+    amount: '$150,000',
+    logo: '/media/dummyDataForDashboardCar/logo4.svg',
+    banner: '/media/dummyDataForDashboardCar/bannerimage4.svg',
+    tag: 'Prediction',
+  },
+  {
+    title: 'Digit Recognizer',
+    description: 'Learn computer vision fundamentals with the famous MNIST data the famous MNIST data Prediction',
+    amount: '$150,000',
+    logo: '/media/dummyDataForDashboardCar/logo4.svg',
+    banner: '/media/dummyDataForDashboardCar/bannerimage4.svg',
+    tag: 'Prediction',
+  },
+  {
+    title: 'Digit Recognizer',
+    description: 'Learn computer vision fundamentals with the famous MNIST data the famous MNIST data Prediction',
+    amount: '$150,000',
+    logo: '/media/dummyDataForDashboardCar/logo4.svg',
+    banner: '/media/dummyDataForDashboardCar/bannerimage4.svg',
+    tag: 'Prediction',
+  }
+  ,
+  {
+    title: 'Digit Recognizer',
+    description: 'Learn computer vision fundamentals with the famous MNIST data the famous MNIST data Prediction',
+    amount: '$150,000',
+    logo: '/media/dummyDataForDashboardCar/logo4.svg',
+    banner: '/media/dummyDataForDashboardCar/bannerimage4.svg',
+    tag: 'Prediction',
+  }
+]
+
+
+const DashboardCard = (data: any) => {
+  return (
+    <div className='shadow-lg card card-rounded  overflow-hidden bg-body '>
+      <img src={toAbsoluteUrl(data.data.banner)} alt="" />
+      <div className='px-2 position-relative' style={{ padding: '45px 0' }}>
+        <img width='85px' className='position-absolute top-0 start-50 translate-middle' src={toAbsoluteUrl(data.data.logo)} alt="" />
+        <h2 className='card-title '>{data.data.title}</h2>
+        <div >{data.data.description}</div>
+        <div >{data.data.tag}</div>
+      </div>
+      <h2 className='text-end'>{data.data.amount}</h2>
+    </div>)
+}
 const BuilderPage: React.FC = () => {
   const [tab, setTab] = useState('Recent Activity')
   const [config, setConfig] = useState<ILayout>(getLayoutFromLocalStorage())
-  const [configLoading, setConfigLoading] = useState<boolean>(false)
-  const [resetLoading, setResetLoading] = useState<boolean>(false)
-
-  const updateConfig = () => {
-    setConfigLoading(true)
-    try {
-      LayoutSetup.setConfig(config)
-      window.location.reload()
-    } catch (error) {
-      setConfig(getLayoutFromLocalStorage())
-      setConfigLoading(false)
-    }
-  }
-
-  const reset = () => {
-    setResetLoading(true)
-    setTimeout(() => {
-      setConfig(getLayoutFromLocalStorage())
-      setResetLoading(false)
-    }, 1000)
-  }
+  // const [configLoading, setConfigLoading] = useState<boolean>(false)
+  // const [resetLoading, setResetLoading] = useState<boolean>(false)
+  // const updateConfig = () => {
+  //   setConfigLoading(true)
+  //   try {
+  //     LayoutSetup.setConfig(config)
+  //     window.location.reload()
+  //   } catch (error) {
+  //     setConfig(getLayoutFromLocalStorage())
+  //     setConfigLoading(false)
+  //   }
+  // }
+  // const reset = () => {
+  //   setResetLoading(true)
+  //   setTimeout(() => {
+  //     setConfig(getLayoutFromLocalStorage())
+  //     setResetLoading(false)
+  //   }, 1000)
+  // }
 
   return (
     <>
@@ -35,28 +188,26 @@ const BuilderPage: React.FC = () => {
         <div className='card mb-10 col-6 me-4 dashboard-main-cards dashboard-main-cards--left'>
           <div className='card-body d-flex align-items-left py-8'>
             <div className='d-flex h-80px w-80px flex-shrink-0 flex-center position-relative'>
-              
-
             </div>
-
           </div>
-
+          <div className='custom-text-container'>
+            <h2 className='mb-3'>VIRTUAL CAMP IN MICROSOFT AZURE
+              FUNDAMENTALS</h2>
+            <h4 className='mb-4'>
+              LEVEL : INTERMEDIATE
+            </h4>
+            <h3>5PM TODAY</h3>
+          </div>
         </div>
         <div className='card mb-10 col-6 dashboard-main-cards dashboard-main-cards--right'>
           <div className='card-body d-flex align-items-left py-8'>
             <div className='d-flex h-80px w-80px flex-shrink-0 flex-center position-relative'>
-
             </div>
-        
             <div className='ms-6'>
               <p className='list-unstyled text-gray-600 fw-bold fs-6 p-0 m-0'>
-                
               </p>
-
               <p className='list-unstyled text-gray-600 fw-bold fs-6 p-0 m-0'>
-          
               </p>
-
             </div>
 
           </div>
@@ -64,7 +215,7 @@ const BuilderPage: React.FC = () => {
         </div>
       </div>
 
-      <div className='card card-custom'>
+      <div className=''>
         <div className='card-header card-header-stretch overflow-auto'>
           <ul
             className='nav nav-stretch nav-line-tabs
@@ -76,39 +227,39 @@ const BuilderPage: React.FC = () => {
           >
             <li className='nav-item'>
               <a
-                className={clsx(`nav-link cursor-pointer`, {active: tab === 'Recent Activity'})}
+                className={clsx(`nav-link cursor-pointer`, { active: tab === 'Recent Activity' })}
                 onClick={() => setTab('Recent Activity')}
                 role='tab'
               >
-                Recent Activity
+                RECENT ACTIVITY
               </a>
             </li>
             <li className='nav-item'>
               <a
-                className={clsx(`nav-link cursor-pointer`, {active: tab === 'Recommended'})}
+                className={clsx(`nav-link cursor-pointer`, { active: tab === 'Recommended' })}
                 onClick={() => setTab('Recommended')}
                 role='tab'
               >
-                Recommended
+                RECOMMENDED
               </a>
             </li>
             <li className='nav-item'>
               <a
-                className={clsx(`nav-link cursor-pointer`, {active: tab === 'In Progress'})}
+                className={clsx(`nav-link cursor-pointer`, { active: tab === 'In Progress' })}
                 onClick={() => setTab('In Progress')}
                 role='tab'
               >
-                In Progress
+                IN PROGRESS
               </a>
             </li>
 
             <li className='nav-item'>
               <a
-                className={clsx(`nav-link cursor-pointer`, {active: tab === 'To Do'})}
-                onClick={() => setTab('RTo Do')}
+                className={clsx(`nav-link cursor-pointer`, { active: tab === 'To Do' })}
+                onClick={() => setTab('To Do')}
                 role='tab'
               >
-                To Do
+                TO DO
               </a>
             </li>
           </ul>
@@ -117,7 +268,7 @@ const BuilderPage: React.FC = () => {
         <form className='form'>
           <div className='card-body'>
             <div className='tab-content pt-3'>
-              <div className={clsx('tab-pane', {active: tab === 'Sidebar'})}>
+              <div className={clsx('tab-pane', { active: tab === 'Sidebar' })}>
                 <div className='form-group d-flex flex-stack'>
                   <div className='d-flex flex-column'>
                     <h4 className='fw-bold text-dark'>Recent Activity</h4>
@@ -135,7 +286,7 @@ const BuilderPage: React.FC = () => {
                           name='model.app.sidebar.default.fixed.desktop'
                           checked={config.app?.sidebar?.default?.fixed?.desktop}
                           onChange={() => {
-                            const con = {...config}
+                            const con = { ...config }
                             if (
                               con.app &&
                               con.app.sidebar &&
@@ -144,7 +295,7 @@ const BuilderPage: React.FC = () => {
                             ) {
                               con.app.sidebar.default.fixed.desktop =
                                 !con.app.sidebar.default.fixed.desktop
-                              setConfig({...con})
+                              setConfig({ ...con })
                             }
                           }}
                         />
@@ -172,7 +323,7 @@ const BuilderPage: React.FC = () => {
                           id='kt_builder_sidebar_minimize_desktop_enabled'
                           checked={config.app?.sidebar?.default?.minimize?.desktop?.enabled}
                           onChange={() => {
-                            const con = {...config}
+                            const con = { ...config }
                             if (
                               con.app &&
                               con.app.sidebar &&
@@ -182,7 +333,7 @@ const BuilderPage: React.FC = () => {
                             ) {
                               con.app.sidebar.default.minimize.desktop.enabled =
                                 !con.app.sidebar.default.minimize.desktop.enabled
-                              setConfig({...con})
+                              setConfig({ ...con })
                             }
                           }}
                         />
@@ -207,7 +358,7 @@ const BuilderPage: React.FC = () => {
                           name='model.app.sidebar.default.minimize.desktop.hoverable'
                           checked={config.app?.sidebar?.default?.minimize?.desktop?.hoverable}
                           onChange={() => {
-                            const con = {...config}
+                            const con = { ...config }
                             if (
                               con.app &&
                               con.app.sidebar &&
@@ -217,7 +368,7 @@ const BuilderPage: React.FC = () => {
                             ) {
                               con.app.sidebar.default.minimize.desktop.hoverable =
                                 !con.app.sidebar.default.minimize.desktop.hoverable
-                              setConfig({...con})
+                              setConfig({ ...con })
                             }
                           }}
                         />
@@ -242,7 +393,7 @@ const BuilderPage: React.FC = () => {
                           name='model.app.sidebar.default.minimize.desktop.default'
                           checked={config.app?.sidebar?.default?.minimize?.desktop?.default}
                           onChange={() => {
-                            const con = {...config}
+                            const con = { ...config }
                             if (
                               con.app &&
                               con.app.sidebar &&
@@ -252,7 +403,7 @@ const BuilderPage: React.FC = () => {
                             ) {
                               con.app.sidebar.default.minimize.desktop.default =
                                 !con.app.sidebar.default.minimize.desktop.default
-                              setConfig({...con})
+                              setConfig({ ...con })
                             }
                           }}
                         />
@@ -270,7 +421,7 @@ const BuilderPage: React.FC = () => {
                 </div>
               </div>
 
-              <div className={clsx('tab-pane', {active: tab === 'Header'})}>
+              <div className={clsx('tab-pane', { active: tab === 'Header' })}>
                 <div className='form-group d-flex flex-stack'>
                   <div className='d-flex flex-column'>
                     <h4 className='fw-bold text-dark'>Fixed</h4>
@@ -290,7 +441,7 @@ const BuilderPage: React.FC = () => {
                           name='model.app.header.default.fixed.desktop'
                           checked={config.app?.header?.default?.fixed?.desktop}
                           onChange={() => {
-                            const con = {...config}
+                            const con = { ...config }
                             if (
                               con.app &&
                               con.app.header &&
@@ -299,10 +450,10 @@ const BuilderPage: React.FC = () => {
                             ) {
                               con.app.header.default.fixed.desktop =
                                 !con.app.header.default.fixed.desktop
-                              setConfig({...con})
+                              setConfig({ ...con })
                             }
                           }}
-                          // [(ngModel)]="model.app.header.default.fixed.desktop"
+                        // [(ngModel)]="model.app.header.default.fixed.desktop"
                         />
                       </div>
                     </div>
@@ -321,10 +472,10 @@ const BuilderPage: React.FC = () => {
                         type='radio'
                         checked={config.app?.header?.default?.content === 'menu'}
                         onChange={() => {
-                          const con = {...config}
+                          const con = { ...config }
                           if (con.app && con.app.header && con.app.header.default) {
                             con.app.header.default.content = 'menu'
-                            setConfig({...con})
+                            setConfig({ ...con })
                           }
                         }}
                         // [(ngModel)]="model.app.header.default.content}
@@ -347,10 +498,10 @@ const BuilderPage: React.FC = () => {
                         id='kt_builder_header_content_page-title'
                         checked={config.app?.header?.default?.content === 'page-title'}
                         onChange={() => {
-                          const con = {...config}
+                          const con = { ...config }
                           if (con.app && con.app.header && con.app.header.default) {
                             con.app.header.default.content = 'page-title'
-                            setConfig({...con})
+                            setConfig({ ...con })
                           }
                         }}
                       />
@@ -365,7 +516,7 @@ const BuilderPage: React.FC = () => {
                 </div>
               </div>
 
-              <div className={clsx('tab-pane', {active: tab === 'Toolbar'})}>
+              <div className={clsx('tab-pane', { active: tab === 'Toolbar' })}>
                 <div className='form-group d-flex flex-stack'>
                   <div className='d-flex flex-column'>
                     <h4 className='fw-bold text-dark'>Fixed</h4>
@@ -381,10 +532,10 @@ const BuilderPage: React.FC = () => {
                           name='model.app.toolbar.fixed.desktop'
                           checked={config.app?.toolbar?.fixed?.desktop}
                           onChange={() => {
-                            const con = {...config}
+                            const con = { ...config }
                             if (con.app && con.app.toolbar && con.app.toolbar.fixed) {
                               con.app.toolbar.fixed.desktop = !con.app.toolbar.fixed.desktop
-                              setConfig({...con})
+                              setConfig({ ...con })
                             }
                           }}
                         />
@@ -402,10 +553,10 @@ const BuilderPage: React.FC = () => {
                           name='model.app.toolbar.fixed.mobile'
                           checked={config.app?.toolbar?.fixed?.mobile}
                           onChange={() => {
-                            const con = {...config}
+                            const con = { ...config }
                             if (con.app && con.app.toolbar && con.app.toolbar.fixed) {
                               con.app.toolbar.fixed.mobile = !con.app.toolbar.fixed.mobile
-                              setConfig({...con})
+                              setConfig({ ...con })
                             }
                           }}
                           id='kt_builder_toolbar_fixed_mobile'
@@ -454,13 +605,13 @@ const BuilderPage: React.FC = () => {
                         name='model.app.toolbar.layout'
                         checked={config.app?.toolbar?.layout === 'classic'}
                         onChange={() => {
-                          const con = {...config}
+                          const con = { ...config }
                           if (con.app && con.app.toolbar) {
                             con.app.toolbar.layout = 'classic'
-                            setConfig({...con})
+                            setConfig({ ...con })
                           }
                         }}
-                        // [(ngModel)]="model.app.toolbar.layout"
+                      // [(ngModel)]="model.app.toolbar.layout"
                       />
                       <div className='form-check-label text-gray-800'>Classic</div>
                     </div>
@@ -486,13 +637,13 @@ const BuilderPage: React.FC = () => {
                         name='model.app.toolbar.layout'
                         checked={config.app?.toolbar?.layout === 'saas'}
                         onChange={() => {
-                          const con = {...config}
+                          const con = { ...config }
                           if (con.app && con.app.toolbar) {
                             con.app.toolbar.layout = 'saas'
-                            setConfig({...con})
+                            setConfig({ ...con })
                           }
                         }}
-                        // [(ngModel)]="model.app.toolbar.layout"
+                      // [(ngModel)]="model.app.toolbar.layout"
                       />
                       <div className='form-check-label text-gray-800'>SaaS</div>
                     </div>
@@ -518,13 +669,13 @@ const BuilderPage: React.FC = () => {
                         name='model.app.toolbar.layout'
                         checked={config.app?.toolbar?.layout === 'accounting'}
                         onChange={() => {
-                          const con = {...config}
+                          const con = { ...config }
                           if (con.app && con.app.toolbar) {
                             con.app.toolbar.layout = 'accounting'
-                            setConfig({...con})
+                            setConfig({ ...con })
                           }
                         }}
-                        // [(ngModel)]="model.app.toolbar.layout"
+                      // [(ngModel)]="model.app.toolbar.layout"
                       />
                       <div className='form-check-label text-gray-800'>Accounting</div>
                     </div>
@@ -550,13 +701,13 @@ const BuilderPage: React.FC = () => {
                         name='model.app.toolbar.layout'
                         checked={config.app?.toolbar?.layout === 'extended'}
                         onChange={() => {
-                          const con = {...config}
+                          const con = { ...config }
                           if (con.app && con.app.toolbar) {
                             con.app.toolbar.layout = 'extended'
-                            setConfig({...con})
+                            setConfig({ ...con })
                           }
                         }}
-                        // [(ngModel)]="model.app.toolbar.layout"
+                      // [(ngModel)]="model.app.toolbar.layout"
                       />
                       <div className='form-check-label text-gray-800'>Extended</div>
                     </div>
@@ -585,13 +736,13 @@ const BuilderPage: React.FC = () => {
                         name='model.app.toolbar.layout'
                         checked={config.app?.toolbar?.layout === 'reports'}
                         onChange={() => {
-                          const con = {...config}
+                          const con = { ...config }
                           if (con.app && con.app.toolbar) {
                             con.app.toolbar.layout = 'reports'
-                            setConfig({...con})
+                            setConfig({ ...con })
                           }
                         }}
-                        // [(ngModel)]="model.app.toolbar.layout"
+                      // [(ngModel)]="model.app.toolbar.layout"
                       />
                       {/* begin::Label */}
                       <div className='form-check-label text-gray-800'>Reports</div>
@@ -605,13 +756,30 @@ const BuilderPage: React.FC = () => {
             </div>
 
             <div className='card-footer py-6'>
-              <div className='row'>
+              {
+                <div className='card-container justify-content-between d-flex gap-md-5'>
+                  {tab === 'Recent Activity' &&
+                    recentActivityApiDataWillBe.map(cardItem => <DashboardCard data={cardItem} />)
+                  }
+                  {tab === 'Recommended' &&
+                    recommendedActivityApiDataWillBe.map(cardItem => <DashboardCard data={cardItem} />)
+                  }
+                  {tab === 'In Progress' &&
+                    inProgressApiDataWillBe.map(cardItem => <DashboardCard data={cardItem} />)
+                  }
+                  {tab === 'To Do' &&
+                    toDoApiDataWillBe.map(cardItem => <DashboardCard data={cardItem} />)
+                  }
+                </div>
+              }
+
+              {/* <div className='row'>
                 <div className='col-lg-3'></div>
                 <div className='col-lg-9'>
                   <button type='button' onClick={updateConfig} className='btn btn-primary me-2'>
                     {!configLoading && <span className='indicator-label'>Preview</span>}
                     {configLoading && (
-                      <span className='indicator-progress' style={{display: 'block'}}>
+                      <span className='indicator-progress' style={{ display: 'block' }}>
                         Please wait...{' '}
                         <span className='spinner-border spinner-border-sm align-middle ms-2'></span>
                       </span>
@@ -626,14 +794,17 @@ const BuilderPage: React.FC = () => {
                   >
                     {!resetLoading && <span className='indicator-label'>Reset</span>}
                     {resetLoading && (
-                      <span className='indicator-progress' style={{display: 'block'}}>
+                      <span className='indicator-progress' style={{ display: 'block' }}>
                         Please wait...{' '}
                         <span className='spinner-border spinner-border-sm align-middle ms-2'></span>
                       </span>
                     )}
                   </button>
                 </div>
-              </div>
+              </div> */}
+
+              {/* TensorFlow - Help Protect the
+              Great Barrier Reef */}
             </div>
           </div>
         </form>
@@ -642,4 +813,4 @@ const BuilderPage: React.FC = () => {
   )
 }
 
-export {BuilderPage}
+export { BuilderPage }
