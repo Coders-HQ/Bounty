@@ -1,10 +1,33 @@
 .dashboard-main-cards {
+    --kt-stepper-icon-bg-color: var(--kt-primary-light); 
     background-size: cover;
-    height: 330px;
+    height: 405px;
     &--left {
         background-image: url('../../../../public/media/logos/microsoft.png');
     }
     &--right {
         background-image: url('../../../../public/media/logos/arabcoders.png');
     }
+    .custom-text-container {
+        padding: 25px;
+        h2{
+            color:#E0E0E0;
+            font-size: 35px;
+        }h3{
+           
+            color:#F3B927;
+        }
+
+        h4{
+            color:#E0E0E0;
+        }
+    }    
+}
+.card-container{
+     @media  (min-width: 1400px) {
+        gap: 70px !important; 
+     } 
+     @media  (min-width: 1400px) {
+        gap: 50px ; 
+     } 
 }
