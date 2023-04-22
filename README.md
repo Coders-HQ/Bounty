@@ -23,7 +23,7 @@
 
 Sometimes, companies come across problems that they don't really have the time or technical expertise to solve. These companies need people with the time and technical expertise to solve these problems for them.
 
-CodersHQ Bounties is a UI thats sits on top of the CodersHQ Backend that allows companies to be able to post challenges through an application. Users are then able to participate in these challenges through the application and be ranked based on a Ranking Algorithm. The user with the highest rank will win the challenge, and in return, receive a cash prize for their hard work!
+CodersHQ Bounties is a UI thats sits on top of the CodersHQ Backend that allows companies to be able to post challenges through an application. Users are then able to participate in these challenges through the application and be ranked based on a Ranking Algorithm. Depending on the type of challenge, the user(s) with the highest rank will win the challenge, and in return, receive a cash prize for their hard work!
 
 ## ⚙️ Project Parts
 
